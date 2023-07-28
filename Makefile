@@ -33,6 +33,9 @@ example_%: example_%.c prgi.c prgi.h
 	gcc -Wall $(CFLAGS) -o $@ $< prgi.c -lm
 
 clean:
-	rm -f $(examples) *.o *~
+	rm -f $(examples) *.o
 
-.PHONY: all clean
+cleanbak: clean
+	rm -f *~
+
+.PHONY: all clean cleanbak
